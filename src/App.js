@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import TeamsOverview from "./components/TeamsOverview";
 
 function App() {
   // ----------------------------------------------------------------------------------------------------------
@@ -13,6 +14,7 @@ function App() {
   // GET API INFO
   React.useEffect(() => {
     axios.get("https://cgjresszgg.execute-api.eu-west-1.amazonaws.com/users/").then(response => {
+      // console.log(response.data);
       setUsersData(response.data);
     })
     axios.get("https://cgjresszgg.execute-api.eu-west-1.amazonaws.com/teams/").then(response => {
@@ -26,9 +28,7 @@ function App() {
   // RENDER
   return (
     <div className="App">
-      <div className="teamGrid">
-        {teamsData.map((team)=> <div key={team.id}>{team.name}</div>)}
-      </div>
+      <TeamsOverview teamsData={teamsData} />
     </div>
   );
 }
