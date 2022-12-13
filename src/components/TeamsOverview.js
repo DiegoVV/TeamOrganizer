@@ -1,23 +1,40 @@
 import React, { useState } from "react";
 
-function TeamsOverview(props) {
-  // ----------------------------------------------------------------------------------------------------------
-  // VARIABLES
+export default function TeamsOverview(props) {
+	// ----------------------------------------------------------------------------------------------------------
+	// VARIABLES
+	const [teamsData, setTeamsData] = useState([]);
 
-  
-  // ----------------------------------------------------------------------------------------------------------
-  // RUN ON LOAD
-  React.useEffect(() => {
-  }, [])
+	const handleSearch = (e) => {
+		e.preventDefault();
+		setTeamsData(
+			props.teamsData.filter((team) => {
+				return team.name.toLowerCase().includes(e.target.value.toLowerCase());
+			})
+		);
+	};
 
+	// ----------------------------------------------------------------------------------------------------------
+	// RUN ON LOAD
+	React.useEffect(() => {
+		setTeamsData(props.teamsData);
+	}, [props]);
 
-  // ----------------------------------------------------------------------------------------------------------
-  // RENDER
-  return (
-        <div className="teamGrid">
-        {props.teamsData.map((team, index)=> <div data-testid={"teamButton"+index} key={team.id}>{team.name}</div>)}
-        </div>
-  );
+	// ----------------------------------------------------------------------------------------------------------
+	// RENDER
+	return (
+		<div>
+			<div className="searchBar">
+				<i className="fa fa-search"></i>
+				<input onChange={handleSearch} type="text" id="searchInput" placeholder="Search Team Name" />
+			</div>
+			<div className="teamGrid">
+				{teamsData.map((team, index) => (
+					<div className="teamButton" data-testid={"teamButton" + index} key={team.id}>
+						{team.name}
+					</div>
+				))}
+			</div>
+		</div>
+	);
 }
-
-export default TeamsOverview;

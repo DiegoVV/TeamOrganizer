@@ -1,7 +1,12 @@
 # TeamOrganizer
 
 Tool for organizing users and teams extracted from REST API.
-Main objective is to get more familiar with testing procedures during development.
+To run, simple run npm install and after all dependencies have been installed run npm start.
+
+API was given for retrieving a list of users, a list of teams and more information about each based on their id.
+Best way to display these teams would be a grid with their names, which you can filter and click on any.
+Clicking on a team name would take you to the list of users that make part of it, highlighting the team lead.
+Further clicking on a user name would take you to their profile page for further information.
 
 ## Available Scripts
 
