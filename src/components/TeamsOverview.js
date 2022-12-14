@@ -1,9 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function TeamsOverview(props) {
 	// ----------------------------------------------------------------------------------------------------------
 	// VARIABLES
 	const [teamsData, setTeamsData] = useState([]);
+
+	let navigate = useNavigate();
+
+	const teamPage = (teamId) => {
+		let path = "/team/" + teamId;
+		navigate(path);
+	};
 
 	const handleSearch = (e) => {
 		e.preventDefault();
@@ -30,7 +38,7 @@ export default function TeamsOverview(props) {
 			</div>
 			<div className="teamGrid">
 				{teamsData.map((team, index) => (
-					<div className="teamButton" data-testid={"teamButton" + index} key={team.id}>
+					<div className="teamButton" data-testid={"teamButton" + index} key={team.id} onClick={() => teamPage(team.id)}>
 						{team.name}
 					</div>
 				))}

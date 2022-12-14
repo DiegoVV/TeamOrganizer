@@ -21,6 +21,7 @@ code {
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
 	color: white;
+	flex-flow: column;
 }
 
 @keyframes spinner {
@@ -63,19 +64,6 @@ code {
 	}
 }
 
-.teamGrid {
-	display: grid;
-	grid-template-columns: auto auto auto;
-	gap: 1.5vw;
-	max-height: 80vh;
-	width: 90vw;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	@media (max-width: 1350px) {
-		grid-template-columns: auto auto;
-	}
-}
-
 .teamButton {
 	border-radius: 5px;
 	cursor: pointer;
@@ -95,6 +83,24 @@ code {
 		color: black;
 		box-shadow: none;
 	}
+}
+
+.teamGrid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 1.5vw;
+	max-height: 80vh;
+	width: 90vw;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	@media (max-width: 1350px) {
+		grid-template-columns: auto auto;
+	}
+}
+
+.teamTitle {
+	font-size: calc(30px + 2vmin);
+	margin-bottom: 30px;
 }
 
 ::-webkit-scrollbar {
