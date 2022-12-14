@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
 import "font-awesome/css/font-awesome.min.css";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals.js";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import App from "./App";
-import TeamPage from "./components/TeamPage";
-import UserPage from "./components/UserPage";
+import App from "./App.js";
+import TeamPage from "./components/TeamPage.js";
+import UserPage from "./components/UserPage.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import TeamsOverview from "./components/TeamsOverview";
+import TeamsOverview from "./components/TeamsOverview.js";
 
 export default function App() {
 	// ----------------------------------------------------------------------------------------------------------

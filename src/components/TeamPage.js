@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import RestAPI from "../services/RestAPI";
+import RestAPI from "../services/RestAPI.js";
 
 export default function TeamPage(props) {
 	// ----------------------------------------------------------------------------------------------------------
 	// VARIABLES
-	const [teamData, setTeamData] = useState([]);
+	const [teamData, setTeamData] = useState({ name: "", teamMemberIds: [] });
 	const [usersData, setUsersData] = useState([]);
 	const params = useParams();
 
@@ -29,10 +29,6 @@ export default function TeamPage(props) {
 	// RUN ON LOAD
 	React.useEffect(() => {
 		fetchData();
-		return () => {
-			setTeamData([]);
-			setUsersData([]);
-		};
 	}, []);
 
 	async function fetchData() {
@@ -62,7 +58,7 @@ export default function TeamPage(props) {
 	// RENDER
 	return (
 		<div className="App">
-			<span className="teamTitle">{teamData.name}</span>
+			<span className="teamTitle">{teamData.name + " (" + (teamData.teamMemberIds.length + 1) + " Members)"}</span>
 			<div className="teamGrid">
 				{usersData
 					.sort((a, b) => (a.firstName + a.lastName > b.firstName + b.lastName ? 1 : -1))

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Route, Routes } from "react-router-dom";
+import TeamPage from "./TeamPage.js";
 
 export default function TeamsOverview(props) {
 	// ----------------------------------------------------------------------------------------------------------
