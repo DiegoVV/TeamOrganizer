@@ -34,7 +34,7 @@ export default function UserPage(props) {
 	async function fetchData() {
 		try {
 			await RestAPI.getUser(params.userId).then((response) => {
-				console.log(response.data);
+				// console.log(response.data);
 				setUserData(response.data);
 			});
 		} catch (err) {
@@ -51,13 +51,16 @@ export default function UserPage(props) {
 				className="userAvatar"
 				// src={defaultAvatar}
 				alt="userAvatar"
+				data-testid={"avatar"}
 				onError={({ currentTarget }) => {
 					currentTarget.src = defaultAvatar;
 					currentTarget.onerror = null; // prevents looping
 				}}
 			/>
-			<span className="teamTitle">{userData.firstName + " " + userData.lastName + " (" + userData.displayName + ")"}</span>
-			<span>From {userData.location}</span>
+			<span className="teamTitle" data-testid={"userName"}>
+				{userData.firstName + " " + userData.lastName + " (" + userData.displayName + ")"}
+			</span>
+			<span data-testid={"location"}>From {userData.location}</span>
 		</div>
 	);
 }

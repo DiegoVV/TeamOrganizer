@@ -18,7 +18,7 @@ export default function TeamsOverview(props) {
 		e.preventDefault();
 		setTeamsData(
 			props.teamsData.filter((team) => {
-				return team.name.toLowerCase().includes(e.target.value.toLowerCase());
+				return String(team.name).toLowerCase().includes(e.target.value.toLowerCase());
 			})
 		);
 	};

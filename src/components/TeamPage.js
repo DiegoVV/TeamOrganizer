@@ -54,7 +54,7 @@ export default function TeamPage(props) {
 				{usersData
 					.sort((a, b) => (a.firstName + a.lastName > b.firstName + b.lastName ? 1 : -1))
 					.map((user, index) => (
-						<div
+						<button
 							className="teamButton"
 							data-testid={"userButton" + index}
 							key={user.id}
@@ -62,7 +62,7 @@ export default function TeamPage(props) {
 							onClick={() => userPage(user.id)}
 						>
 							{user.firstName + " " + user.lastName}
-						</div>
+						</button>
 					))}
 			</div>
 		</div>
