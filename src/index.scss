@@ -66,6 +66,7 @@ code {
 
 .teamButton {
 	border-radius: 5px;
+	font-size: calc(5px + 2vmin);
 	cursor: pointer;
 	padding: 10px 6px;
 	letter-spacing: 1px;
@@ -99,8 +100,17 @@ code {
 }
 
 .teamTitle {
-	font-size: calc(30px + 2vmin);
+	font-size: calc(25px + 2vmin);
 	margin-bottom: 30px;
+}
+
+.userAvatar {
+	width: 10vw;
+	margin: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+	height: 10vw;
 }
 
 ::-webkit-scrollbar {

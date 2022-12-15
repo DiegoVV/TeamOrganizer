@@ -39,9 +39,9 @@ export default function TeamsOverview(props) {
 			</div>
 			<div className="teamGrid">
 				{teamsData.map((team, index) => (
-					<div className="teamButton" data-testid={"teamButton" + index} key={team.id} onClick={() => teamPage(team.id)}>
+					<button className="teamButton" data-testid={"teamButton" + index} key={team.id} onClick={() => teamPage(team.id)}>
 						{team.name}
-					</div>
+					</button>
 				))}
 			</div>
 		</div>

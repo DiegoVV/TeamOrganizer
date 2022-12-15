@@ -20,7 +20,7 @@ test("Render team buttons according to props", () => {
 			/>
 		</Router>
 	);
-	const teamButton = screen.getByTestId("teamButton0");
+	const teamButton = screen.getByRole("div", { testid: "teamButton0" });
 	const teamButton1 = screen.getByTestId("teamButton1");
 	expect(teamButton).toBeInTheDocument();
 	expect(teamButton).toHaveTextContent("1");

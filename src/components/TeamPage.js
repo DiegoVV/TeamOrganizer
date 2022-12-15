@@ -16,15 +16,6 @@ export default function TeamPage(props) {
 		navigate(path);
 	};
 
-	// const handleSearch = (e) => {
-	// 	e.preventDefault();
-	// 	setTeamsData(
-	// 		props.teamsData.filter((team) => {
-	// 			return team.name.toLowerCase().includes(e.target.value.toLowerCase());
-	// 		})
-	// 	);
-	// };
-
 	// ----------------------------------------------------------------------------------------------------------
 	// RUN ON LOAD
 	React.useEffect(() => {
